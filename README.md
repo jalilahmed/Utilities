@@ -1,5 +1,5 @@
 # Utilities
-This Repository contains functions in python for day to day programming specially focusing in domain of Domain Learning. You can find the function in the folder with respective name. In this ReadMe file, a Short description of every function, its inputs, outputs, and their type along with a short example are given. 
+This Repository contains functions in python for day to day programming specially focusing in domain of Domain Learning. You can find the function in the python with respective name. In this ReadMe file, a Short description of every function, its inputs, outputs, and their type along with a short example are given. 
 
 ## Motivation
 The motivation for this project was to develop a log for all the different utilities function I write over the span of different Deep Learning Courses and Projects. This will help me keep a log of different helper functions I have written as well as provide an easy to use library for application in future project. Also I wanted to help new to community members as well, so they dont have to search on helper functions and they can focus more on the Deep Learning task at hand. 

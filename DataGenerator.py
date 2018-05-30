@@ -1,5 +1,6 @@
 import numpy as np
 from keras.utils import Sequence, to_categorical
+from sklearn.utils import shuffle
 
 
 class DataGenerator(Sequence):
@@ -11,30 +12,25 @@ class DataGenerator(Sequence):
         self.n_channels = n_channels
         self.n_classes = n_classes
         self.shuffle = shuffle
-        self.indexes = None
         self.on_epoch_end()
 
     def __len__(self):
         return int(np.floor(len(self.labels) / self.batch_size))
 
     def __getitem__(self, index):
-        indexes = self.indexes[index * self.batch_size: (index + 1) * self.batch_size]
-
-        x_batched, y_batched = self.__data_generation(indexes)
-
-        return x_batched, y_batched
+        indexes = [index * self.batch_size, (index + 1) * self.batch_size]
+        self.x_batched, self.y_batched = self.__data_generation(indexes)
+        return self.x_batched, self.y_batched
 
     def on_epoch_end(self):
-        self.indexes = np.arange(len(self.data))
         if self.shuffle:
-            np.random.shuffle(self.indexes)
+            shuffle(self.x_batched, self.y_batched)
 
     def __data_generation(self, indexes):
         start_index = indexes[0]
         end_index = indexes[1]
+        x_batched = self.data[start_index:end_index]
+        y_batched = self.labels[start_index:end_index]
 
-        x = self.data[start_index:end_index]
-        y = self.labels[start_index:end_index]
-
-        return x, to_categorical(y, num_classes=self.n_classes)
+        return x_batched, to_categorical(y_batched, num_classes=self.n_classes)
 

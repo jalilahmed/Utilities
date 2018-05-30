@@ -53,6 +53,7 @@ generator = DataGenerator(data, labels, **params)
 ### Further Resources
 1. [Shervine Amid](https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly.html)
 2. [Keras Sequence Class](https://keras.io/preprocessing/sequence/)
+
 *Please Note that this is tutorial based Class. *
 
 ## Credits

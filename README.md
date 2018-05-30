@@ -54,7 +54,7 @@ generator = DataGenerator(data, labels, **params)
 1. [Shervine Amid](https://stanford.edu/~shervine/blog/keras-how-to-generate-data-on-the-fly.html)
 2. [Keras Sequence Class](https://keras.io/preprocessing/sequence/)
 
-*Please Note that this is tutorial based Class. *
+*Please Note that this is tutorial based Class.
 
 ## Credits
 I would like to give credit to [lazyProgrammer](https://lazyprogrammer.me) for developing a very comprehensive and understandable course for deep learning. Also [Azeem Bootwala](https://github.com/azeembootwala) for encouragement. Also, 
